@@ -6,19 +6,19 @@
       "value": "GEN-UNIQUE"
     },
     "domainName": {
-      "value": "corp.contoso.com"
+      "value": "GEN-CUSTOM-FQDN-NAME"
     },
     "adminUsername": {
-      "value": "GEN-UNIQUE"
+      "value": "GEN-UNIQUE-8"
     },
     "adminPassword": {
       "value": "GEN-PASSWORD"
     },
     "vmSize": {
-      "value": "Standard_D2_v2"
+      "value": ""
     },
     "storageAccountType": {
-      "value": "Standard_LRS"
+      "value": ""
     },
     "dnsLabelPrefix": {
       "value": "GEN-UNIQUE-13"
@@ -27,7 +27,7 @@
       "value": "No"
     },
     "clientVhdUri": {
-      "value": "GEN-UNIQUE"
+      "value": "GEN-GENERALIZED-WINVHD-URI"
     },
     "clientVhdUriSasToken": {
       "value": "GEN-UNIQUE"

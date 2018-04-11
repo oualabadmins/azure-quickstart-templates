@@ -95,7 +95,6 @@
   "variables": {
 
     "baseVnet": "[concat(parameters('configName'),'-VNET')]",
-    "VnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('baseVnet'))]",
     "shortDomainName": "[first(split(parameters('domainName'),'.'))]",
     "domainUserName": "[concat(variables('shortDomainName'),'\\',parameters('adminUsername'))]",
 
@@ -107,7 +106,7 @@
 
     "network": {
       "vnetName": "[variables('baseVnet')]",
-      "subnetRef": "[concat(variables('VnetID'),'/subnets/subnet-01')]",
+      "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('baseVnet'), 'subnet-01')]",
       "subnet": "10.0.0.0/24",
       "nsgName": "[concat(parameters('configName'),'-NSG')]"
     },
@@ -191,7 +190,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[concat(variables('storage').storageAccountName,'vhds')]",
-      "apiVersion": "2016-01-01",
+      "apiVersion": "2017-06-01",
       "location": "[resourceGroup().location]",
       "kind": "Storage",
       "comments": "This storage account contains VHDs for VMs in the deployment.",
@@ -202,7 +201,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[concat(variables('storage').storageAccountName,'diag')]",
-      "apiVersion": "2016-01-01",
+      "apiVersion": "2017-06-01",
       "location": "[resourceGroup().location]",
       "kind": "Storage",
       "comments": "This storage account contains diagnostics data.",
@@ -211,7 +210,7 @@
       }
     },
     {
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2017-06-01",
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[variables('VMs').adPublicIpName]",
       "location": "[resourceGroup().location]",
@@ -224,7 +223,7 @@
       }
     },
     {
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2017-06-01",
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[variables('VMs').appPublicIpName]",
       "location": "[resourceGroup().location]",
@@ -237,7 +236,7 @@
       }
     },
     {
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2017-06-01",
       "condition": "[equals(parameters('deployClientVm'),'Yes')]",
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[variables('VMs').cliPublicIpName]",
@@ -362,7 +361,7 @@
           "location": {
             "value": "[resourceGroup().location]"
           },
-          "adVMName": {
+          "vmName": {
             "value": "[variables('VMs').adVmName]"
           },
           "adVMSize": {
@@ -414,7 +413,7 @@
           "location": {
             "value": "[resourceGroup().location]"
           },
-          "appVMName": {
+          "vmName": {
             "value": "[variables('VMs').appVmName]"
           },
           "appVMSize": {
@@ -461,7 +460,7 @@
           "location": {
             "value": "[resourceGroup().location]"
           },
-          "cliVMName": {
+          "vmName": {
             "value": "[variables('VMs').cliVmName]"
           },
           "cliVMSize": {
