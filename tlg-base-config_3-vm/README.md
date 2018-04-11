@@ -7,10 +7,10 @@
 <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.png"/>
 </a>
 
-This template deploys the **tlg-base-config_3-vm** solution, a Test Lab Guide (TLG) configuration that represents a simplified intranet connected 
+This template deploys the **TLG (Test Lab Guide) 3 VM Base Configuration**, a Test Lab Guide (TLG) configuration that represents a simplified intranet connected 
 to the Internet. This base configuration is the starting point for additional TLGs that can be found [here](http://aka.ms/catlgs).
 
-The **tlg-base-config_3-vm** solution provisions a Windows Server 2012 R2 Active Directory domain controller using the specified domain name, 
+The **TLG (Test Lab Guide) 3 VM Base Configuration** provisions a Windows Server 2012 R2 Active Directory domain controller using the specified domain name, 
 an application server running Windows Server 2012 R2, and optionally a client VM running Windows 10. 
 
 **Note:** If you choose to deploy a client VM, you must upload a generalized Windows 10 VHD to an Azure storage account and provide the account name and SAS token. 

@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "configName": {
-      "value": "TlgBaseConfig-01"
+      "value": "GEN-UNIQUE"
     },
     "domainName": {
       "value": "corp.contoso.com"
@@ -15,13 +15,22 @@
       "value": "GEN-PASSWORD"
     },
     "vmSize": {
-      "value": "Standard_DS1_v2"
+      "value": "Standard_D2_v2"
     },
     "storageAccountType": {
       "value": "Standard_LRS"
     },
     "dnsLabelPrefix": {
       "value": "GEN-UNIQUE-13"
+    },
+    "deployClientVm": {
+      "value": "No"
+    },
+    "clientVhdUri": {
+      "value": "GEN-UNIQUE"
+    },
+    "clientVhdUriSasToken": {
+      "value": "GEN-UNIQUE"
     }
   }
 }
